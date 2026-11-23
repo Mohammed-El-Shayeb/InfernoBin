@@ -55,10 +55,24 @@ jobs:
           name: Inferno Bin v${{ steps.ver.outputs.version }}
           body: |
             ## 🔥 Inferno Bin v${{ steps.ver.outputs.version }}
-            **حمّل `InfernoBin.exe` من الأسفل وشغّله مباشرة — لا يحتاج تثبيت ولا Python.**
 
-            Download `InfernoBin.exe` below and run it — no installation, no Python required.
+            **A realistic burning fire pit for your Windows desktop. Drag any file or folder onto the fire, and it burns away.**
 
-            > أول تشغيل قد يظهر تحذير Windows SmartScreen: اضغط **More info** ثم **Run anyway**.
+            ### ⬇️ Download
+            Download **`InfernoBin.exe`** below and double-click it. No installation, no Python, no extra files.
 
-            Designed & Developed by **Mohammed El-Shayeb (محمد الشايب)**
+            ### ✨ Highlights
+            - Photographic stone fire pit with living, animated flames, sparks, and smoke
+            - Drag and drop to burn, with no confirmation prompts
+            - Fire that reacts: it grows on hover, roars on drag, and bursts on drop
+            - Real crackling fire sound with mute and volume controls
+            - Safe by default: files go to the Recycle Bin (optional permanent mode)
+            - Built-in protection for system and user folders
+            - Always on top, movable, three sizes, Arabic and English, starts with Windows
+
+            ### ⚠️ First launch
+            Windows SmartScreen may show *"Windows protected your PC"* because the app is new and not code-signed.
+            Click **More info** → **Run anyway**. You only need to do this once.
+
+            ---
+            Designed & Developed by **Mohammed El-Shayeb**, Computer Vision & AI Engineer

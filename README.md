@@ -1,43 +1,70 @@
-# 🔥 Inferno Bin
+<div align="center">
 
-**سلة مهملات مشتعلة كلاسيكية لسطح المكتب** — اسحب أي ملف أو مجلد عليها بالماوس فيحترق.
+<img src="icon.png" width="128" alt="Inferno Bin icon">
 
-> Designed & Developed by **Mohammed El-Shayeb (محمد الشايب)** — Computer Vision & AI Engineer
-> © 2026 Mohammed El-Shayeb. All rights reserved.
+# Inferno Bin
 
-![Inferno Bin](shots/states.png)
+**A realistic burning fire pit for your Windows desktop.**
+Drag any file or folder onto the fire, and it burns away.
 
-## ⬇️ التحميل / Download
-**[حمّل InfernoBin.exe من هنا](https://github.com/Mohammed-El-Shayeb/InfernoBin/releases/latest)** — ملف واحد، دبل كليك ويشتغل، بدون تثبيت وبدون Python.
+[![Download](https://img.shields.io/github/v/release/Mohammed-El-Shayeb/InfernoBin?label=Download&style=for-the-badge&color=e8590c)](https://github.com/Mohammed-El-Shayeb/InfernoBin/releases/latest)
+![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078d4?style=for-the-badge)
 
-> أول تشغيل قد يظهر تحذير Windows الأزرق: اضغط **More info** ← **Run anyway**.
+<img src="shots/states.png" alt="Inferno Bin: idle, hovering, burning files, full blaze">
 
-## المزايا
-- موقد حجري حقيقي (صورة مفرّغة) مع نار حيّة متحركة وشرر ودخان، والحجارة تضيء بلهب النار.
-- النار مشتعلة دائماً بهدوء، وتكبر عند مرور الماوس، وأكثر عند سحب ملف فوقها، والحرق فوري بدون أي سؤال: تسقط أوراق في السلة وتحترق وتشتعل النار.
-- **وضعان للحذف:** إلى سلة المحذوفات (آمن، الافتراضي) أو حرق نهائي.
-- حماية من حذف مسارات النظام (جذر القرص، Windows، Program Files، مجلد المستخدم، سطح المكتب...).
-- نافذة شفافة بلا إطار، فوق كل النوافذ، ويمكن تحريكها بالسحب، وتحفظ مكانها.
-- صوت طقطقة نار حقيقي متواصل بدون انقطاع (يعلو مع اشتداد النار)، مع زر كتم ومستوى صوت.
-- ثلاثة أحجام، وواجهة عربي/إنجليزي، وأيقونة في شريط المهام، وسجل للمحروقات.
-- خيار التشغيل مع بدء ويندوز، ونقرة مزدوجة تفتح سلة المحذوفات.
-- الحذف يعمل في الخلفية فلا تتجمد الواجهة مع المجلدات الكبيرة.
+</div>
 
-## التشغيل
-1. ثبّت Python من https://www.python.org/downloads/ مع تفعيل خيار **Add python.exe to PATH**.
-2. فك الضغط ثم دبل كليك على **`start.bat`**: يثبّت المكتبات تلقائياً ويشغّل السلة أسفل يمين الشاشة.
-3. أي خطأ يظهر في رسالة ويُحفظ في `%APPDATA%\InfernoBin\error_log.txt`.
+## Download
 
-## بناء ملف ‎.exe‎ (على ويندوز)
-شغّل `build_windows.bat` ← الناتج `dist\InfernoBin.exe`
-خصائص الملف (Properties → Details) تحمل اسمك كمطوّر وصاحب الحقوق.
+1. Go to the **[latest release](https://github.com/Mohammed-El-Shayeb/InfernoBin/releases/latest)**.
+2. Download **`InfernoBin.exe`**.
+3. Double-click it. That's it: no installation, no Python, no extra files.
 
-## الاستخدام
-| الحركة | الوظيفة |
+> **First launch:** Windows SmartScreen may show *"Windows protected your PC"* because the app is new and not code-signed.
+> Click **More info** → **Run anyway**. You only need to do this once.
+
+## Features
+
+- **Real fire pit:** a photographic stone fire pit with living, animated flames, rising sparks, smoke, and firelight that flickers across the stones.
+- **Drag, drop, burn:** drop any file or folder onto the fire. Sheets of paper fall in, char, and the fire flares up. No confirmation prompts.
+- **Responsive fire:** the flames grow when you hover, roar when you drag a file over them, and burst when you drop it.
+- **Real crackling sound:** a seamless fire-crackle loop that gets louder as the fire grows, with mute and volume controls.
+- **Safe by default:** files go to the **Recycle Bin**, so you can restore anything. An optional *Burn permanently* mode is available.
+- **System protection:** drive roots, Windows, Program Files, your user folder, Desktop, Documents, and other critical locations are refused.
+- **Desktop widget:** transparent and frameless, stays on top, can be moved anywhere, and remembers its position.
+- **Personalization:** three sizes, Arabic and English interface, tray icon, *Start with Windows*, and a burn log.
+- **Smooth:** files are deleted in the background, so even huge folders never freeze the fire.
+
+## How to use
+
+| Action | Result |
 |---|---|
-| سحب ملف/مجلد وإفلاته على السلة | حرق 🔥 |
-| سحب السلة بالزر الأيسر | تحريكها |
-| زر أيمن | القائمة والإعدادات |
-| نقرة مزدوجة | فتح سلة المحذوفات |
+| Drag a file or folder onto the fire | Burns it 🔥 |
+| Left-click and drag the fire pit | Moves it |
+| Right-click | Settings menu |
+| Double-click | Opens the Recycle Bin |
 
-الإعدادات والسجل محفوظة في `%APPDATA%\InfernoBin`.
+**Settings menu:** delete mode · confirm before burning · always on top · size · fire sound · volume · start with Windows · language · burn log · about.
+
+Settings and the burn log are stored in `%APPDATA%\InfernoBin`.
+
+## Build from source
+
+Requires **Python 3.10+** on Windows.
+
+```bash
+pip install -r requirements.txt
+python inferno_bin.py
+```
+
+To build the standalone `InfernoBin.exe`, run `build_windows.bat`. The file is created in `dist\`.
+
+Every push to `main` that changes the app builds and publishes a new release automatically through GitHub Actions.
+
+## Author
+
+**Mohammed El-Shayeb (محمد الشايب)**, Computer Vision & AI Engineer
+
+[LinkedIn](https://www.linkedin.com/in/mohammed-el-shayeb) · mohammed.el.shayeb.ai@gmail.com
+
+© 2026 Mohammed El-Shayeb. All rights reserved.

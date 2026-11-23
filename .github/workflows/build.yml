@@ -1,0 +1,56 @@
+name: Build Windows EXE
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt pyinstaller
+
+      - name: Build icon
+        run: python inferno_bin.py --export-icon icon.ico
+        env:
+          QT_QPA_PLATFORM: offscreen
+
+      - name: Build EXE
+        run: >
+          pyinstaller --noconfirm --clean --onefile --windowed --name InfernoBin
+          --icon icon.ico --version-file version_info.txt
+          --add-data "assets;assets" inferno_bin.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: InfernoBin
+          path: dist/InfernoBin.exe
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/InfernoBin.exe
+          name: Inferno Bin ${{ github.ref_name }}
+          body: |
+            ## 🔥 Inferno Bin ${{ github.ref_name }}
+            **حمّل `InfernoBin.exe` من الأسفل وشغّله مباشرة — لا يحتاج تثبيت ولا Python.**
+
+            Download `InfernoBin.exe` below and run it — no installation, no Python required.
+
+            > أول تشغيل قد يظهر تحذير Windows SmartScreen: اضغط **More info** ثم **Run anyway**.
+
+            Designed & Developed by **Mohammed El-Shayeb (محمد الشايب)**

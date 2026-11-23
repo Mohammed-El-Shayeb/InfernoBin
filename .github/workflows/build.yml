@@ -2,7 +2,8 @@ name: Build Windows EXE
 
 on:
   push:
-    tags: ["v*"]
+    branches: [main]
+    paths: ["inferno_bin.py", "assets/**", "version_info.txt", "requirements.txt", ".github/workflows/build.yml"]
   workflow_dispatch:
 
 permissions:
@@ -17,6 +18,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Read version
+        id: ver
+        shell: bash
+        run: echo "version=$(grep -m1 '^APP_VERSION' inferno_bin.py | cut -d'"' -f2)" >> "$GITHUB_OUTPUT"
 
       - name: Install dependencies
         run: |
@@ -40,13 +46,15 @@ jobs:
           path: dist/InfernoBin.exe
 
       - name: Publish release
-        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: v${{ steps.ver.outputs.version }}
+          target_commitish: ${{ github.sha }}
+          make_latest: true
           files: dist/InfernoBin.exe
-          name: Inferno Bin ${{ github.ref_name }}
+          name: Inferno Bin v${{ steps.ver.outputs.version }}
           body: |
-            ## 🔥 Inferno Bin ${{ github.ref_name }}
+            ## 🔥 Inferno Bin v${{ steps.ver.outputs.version }}
             **حمّل `InfernoBin.exe` من الأسفل وشغّله مباشرة — لا يحتاج تثبيت ولا Python.**
 
             Download `InfernoBin.exe` below and run it — no installation, no Python required.
